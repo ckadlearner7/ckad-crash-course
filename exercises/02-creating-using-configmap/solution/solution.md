@@ -47,6 +47,10 @@ Log into the Pod and run the `env` command.
 
 ```shell
 $ kubectl exec backend -it -- /bin/sh
+
+ ###  k exec -it backend -- env
+ 
+ 
 # env
 DB_URL=localhost:3306
 DB_USERNAME=postgres
