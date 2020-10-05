@@ -9,7 +9,8 @@ $ kubectl create namespace ckad-prep
 Next, create the Pod in the new namespace.
 
 ```shell
-$ kubectl run mypod --image=nginx:2.3.5 --port=80 --namespace=ckad-prep
+##  kubectl run mypod --image=nginx:2.3.5 --port=80 --namespace=ckad-prep
+
 pod/mypod created
 ```
 
@@ -76,7 +77,9 @@ mypod   1/1     Running   0          12m   192.168.60.149   docker-for-desktop
 Remember to use the `--rm` to create a temporary Pod.
 
 ```shell
+
 ##  kubectl run busybox --image=busybox --rm -it --restart=Never -n ckad-prep -- /bin/sh
+
 If you don't see a command prompt, try pressing enter.
 # wget -O- 192.168.60.149:80
 Connecting to 192.168.60.149:80 (192.168.60.149:80)
@@ -120,7 +123,10 @@ Delete the Pod and namespace after you are done.
 
 ```shell
 $ kubectl delete pod mypod --namespace=ckad-prep
-##kubectl delete pod mypod --namespace=ckad-prep   --grace-period=0 --force
+
+## kubectl delete pod mypod --namespace=ckad-prep   --grace-period=0 --force
+
+
 pod "mypod" deleted
 $ kubectl delete namespace ckad-prep
 namespace "ckad-prep" deleted
