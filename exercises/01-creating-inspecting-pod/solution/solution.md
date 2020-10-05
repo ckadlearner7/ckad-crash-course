@@ -116,7 +116,12 @@ Delete the Pod and namespace after you are done.
 
 ```shell
 $ kubectl delete pod mypod --namespace=ckad-prep
+kubectl delete pod mypod --namespace=ckad-prep   --grace-period=0 --force
 pod "mypod" deleted
 $ kubectl delete namespace ckad-prep
 namespace "ckad-prep" deleted
+
+
 ```
+
+
